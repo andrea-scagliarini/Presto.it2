@@ -1,0 +1,228 @@
+/* SETTAGGI INIZIALI */
+:root{
+    --main: #2D6A4F;
+    --sec: #40916C;
+    --acc: #52B788;
+    --green-dark: #081C15;
+    --green-light: #d8f3dc;
+    --dark: rgb(20, 20, 20);
+    --light: rgb(245, 245, 245);
+}
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+    font-family: "Electrolize", sans-serif;
+}
+
+
+body{
+    background-color: var(--light);
+}
+/* FINE SETTAGGI INIZIALI */
+
+
+/* NAVBAR STYLE */
+.bg-navbar{
+    background-color: var(--green-dark);
+}
+
+.navbar{
+    transition: 1s;
+}
+
+#logo{
+    height: 70px;
+    transition: 1s;
+}
+
+.nav-link{
+    color: var(--sec);
+    display: inline-block;
+    border: 2px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link:focus{
+    color: var(--acc);
+    border-bottom: 2px solid var(--acc);
+}
+
+.navbar-toggler {
+    border: var(--bs-border-width) solid var(--sec);
+
+}
+
+#menu-button{
+    color: var(--sec);
+}
+
+.container-navbar{
+    position: relative;
+    margin-top: 45px;
+    padding: 0 3rem;
+    transition: 0.4s;
+    z-index: 2;
+}
+
+.container-navbar.sticky-top{
+    position: sticky;
+    top: 0;
+    padding: 0;
+    z-index: 2;
+}
+/* FINE NAVBAR STYLE */
+
+/* HEADER STYLE */
+h1{
+    font-size: 4rem;
+}
+
+.bg-button{
+    background-color: var(--green-light);
+    color: var(--green-dark);
+    border: 1px solid var(--green-dark);
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    transition: 0.4s;
+}
+
+.bg-button:hover{
+    background-color: var(--green-dark);
+    color: var(--green-light);
+    border: 1px solid var(--green-light);
+}
+
+.container-header{
+    margin-top: -100px;
+}
+/* FINE HEADER STYLE */
+
+/* SEZIONE NUMBERS */
+.number{
+    font-size: 50px;
+    color: var(--acc);
+    font-weight: 500;
+}
+/* FINE SEZIONE NUMBERS */
+
+/* SEZIONE ANNUNCI */
+.accordion-button{
+    background-color: var(--green-light);
+    color: var(--green-dark);
+    transition: all 1s;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--green-dark);
+    color: var(--green-light);
+}
+
+.accordion-button::after {
+    background-image: url('../../Resources/img/chevron-down-solid.svg');
+    background-repeat: no-repeat;
+    transform: rotateZ(360deg);
+}
+
+.accordion-button:not(.collapsed)::after{
+    background-image: url('../../Resources/img/chevron-up-solid.svg');
+    background-repeat: no-repeat;
+    transform: rotateZ(0deg);
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    outline: 0;
+    box-shadow: var(--green-light);
+}
+
+.form-control:focus{
+    box-shadow: 5px 5px 2px var(--green-light);
+    border-color: var(--main);
+}
+
+.form-check-input:checked {
+    background-color: var(--acc);
+    border-color: var(--acc);
+}
+
+.form-check-label{
+    color: var(--main);
+}
+
+.card{
+    width: 18rem;
+}
+
+.text-category{
+    color: var(--sec);
+}
+
+.img-zoom{
+    transition: all 1s;
+}
+
+.img-zoom:hover{
+    transform: scale(1.2);
+}
+
+.text-price{
+    color: var(--acc);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.card-title{
+    color: var(--green-dark);
+    font-weight: 900;
+}
+
+#inputRange{
+    width: 100%;
+}
+/* FINE SEZIONE ANNUNCI */
+
+
+/* Animazioni */
+.fadeRight{
+    animation: fadeRight 1s;
+}
+
+@keyframes fadeRight{
+    0%{
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 1000px){
+    .container-navbar{
+        position: static;
+        margin-top: 0px;
+        padding: 0;
+    }
+    
+    .container-navbar.sticky-top{
+        position: static;
+        margin-top: 0;
+    }
+
+    .navbar{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .container-header{
+        margin-top: 0;
+    }
+}
