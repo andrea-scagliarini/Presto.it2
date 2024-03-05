@@ -184,6 +184,58 @@ h1{
 }
 /* FINE SEZIONE ANNUNCI */
 
+/* SEZIONE ABOUT */
+.about-img::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -50%;
+    background-color: var(--acc);
+    z-index: 1;
+    /* clip-path: polygon(0 0, 37% 0, 100% 100%, 0% 100%); */
+    transform: skew(20deg);
+}
+
+.about-img img{
+    position: relative;
+    z-index: 2;
+}
+
+.icon-about{
+    color: var(--acc);
+}
+
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+/* FINE SEZIONE ABOUT */
+
+/* SEZIONE CHI SIAMO */
+.btn-social{
+    background-color: var(--light);
+    border-radius: 50%;
+    color: var(--acc);
+    padding: 7px 8px;
+}
+
+.btn-social:hover{
+    background-color: var(--acc);
+    border-radius: 50%;
+    color: var(--light);
+}
+/* FINE SEZIONE CHI SIAMO */
 
 /* Animazioni */
 .fadeRight{

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Annunci - Presto.it</title>
+    
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <!-- CDN AOS -->
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+    <!-- CDN FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CDN GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- BS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- effetto sticky navbar -->
+    <div class="container-fluid container-navbar">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-xl bg-navbar" aria-label="My Navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <!-- inseriamo il logo -->
+                    <img src="../../Resources/img/logo_green_light.png" alt="logo del sito" id="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- inseriamo una nostra icona -->
+                    <i id="menu-button" class="fa-solid fa-bars-staggered"></i>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="navbar-nav mx-auto mb-2 mb-xl-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Resources/views/annunci.html">Annunci</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Chi siamo</a>
+                        </li>
+                    </ul>
+                    <!-- <form role="search">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    </form> -->
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- FINE NAVBAR -->
+    
+    <!-- SEZIONE ANNUNCI -->
+    <div class="container-fluid my-5">
+        <div class="row">
+            <!-- colonna sinistra -->
+            <div class="col-12 col-md-2">
+                <!--filtri con accordion -->
+                <h3>Cerca per:</h3>
+                <div class="accordion" id="accordionFilters">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Categoria
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFilters">
+                            <div class="accordion-body" id="radioWrapper">
+                                <!-- radio buttons per la scelta delle categorie -->
+                                
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="categories" id="All" checked>
+                                    <label class="form-check-label" for="All">
+                                        Tutte le categorie
+                                    </label>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Prezzo
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFilters">
+                            <div class="accordion-body">
+                                
+                                <!-- <label for="customRange1" class="form-label">Example range</label> -->
+                                <input type="range"  class="mt-3" id="inputRange">
+                                <p id="numberPrice">0 €</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Parola
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFilters">
+                            <div class="accordion-body">
+                                
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="wordsFilterInput">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                    <input id="wordInput" type="text" class="form-control" placeholder="Cerca un prodotto" aria-label="Cerca un prodotto" aria-describedby="wordsFilterInput">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- colonna destra -->
+            <div class="col-12 col-md-10">
+                <!-- card con annunci -->
+                <h3>Annunci:</h3>
+                <!-- mantengo solo la row alla quale appenderemo le card degli annunci -->
+                <div class="row" id="cardsWrapper">
+                    <!-- <div class="col-12 col-md-3">
+                        annuncio
+                        <div class="card" >
+                            div che ci serve per delimitare quest'area ed aggiungere l'effetto zoom
+                            <div class="position-relative overflow-hidden">
+                                <a href="">
+                                    <img src="../img/property-1.jpg" class="card-img-top img-zoom" alt="...">
+                                </a>
+                                div che mostrerà la categoria
+                                <div class="position-absolute bottom-0 start-0 bg-white rounded-top py-1 px-3 mx-3 text-category">
+                                    Categoria
+                                </div>
+                            </div>
+                            
+                            <div class="card-body">
+                                
+                                <p class="text-price">
+                                    € 300.99
+                                </p>
+                                <a href="#" class="text-decoration-none">
+                                    <h5 class="card-title">Titolo Annuncio</h5>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div> -->
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- FINE SEZIONE ANNUNCI -->
+    
+    
+    <!-- AOS JS -->
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    
+    <!-- BS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- MY JS -->
+    <script src="../js/main.js"></script>
+    <!-- ANNUNCI JS -->
+    <script src="../js/annunci.js"></script>
+    <!-- Inizializzazione AOS -->
+    <!-- <script>
+        AOS.init();
+    </script> -->
+    
+</body>
+</html>
