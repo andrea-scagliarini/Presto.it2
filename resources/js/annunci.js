@@ -23,7 +23,10 @@ fetch('../annunci.json')
         //catturo il campo wordInput
         let wordInput = document.querySelector('#wordInput');
 
+        // catturiamo il bottone per resettare i filtri
+        let btnReset = document.querySelector('#btnReset');
 
+        
         //creo la funzione per estrapolare le singole categorie
         function setCategory() {
 
@@ -64,7 +67,7 @@ fetch('../annunci.json')
                 div.classList.add('col-12', 'col-md-3' , 'my-2');
                 div.innerHTML = `
                     <!-- annuncio -->
-                    <div class="card" >
+                    <div class="card overflow-hidden" >
                     <!-- div che ci serve per delimitare quest'area ed aggiungere l'effetto zoom -->
                     <div class="position-relative overflow-hidden">
                     <a href="">
@@ -97,7 +100,7 @@ fetch('../annunci.json')
         
         //catturo tutti i radio buttons delle categorie
         let radioCategories = document.querySelectorAll('.form-check-input');
-        // console.log(radioCategories);
+        console.log(radioCategories);
         
         //filtro per categoria
         function filterByCategory(array) {
@@ -191,4 +194,16 @@ fetch('../annunci.json')
             }, 1000)
         })
 
+        //logica per il reset dei filtri
+        btnReset.addEventListener( 'click', ()=> {
+            //assegno l'attributo checked = true al radio button con id "all"
+            radioCategories[0].checked = true;
+            //invoco la funzione per settare il prezzo massimo
+            setInputPrice();
+            //svuoto il value del campo input della ricerca per parola
+            wordInput.value = '';
+
+            //invoco la global filter per mostrare di nuovo tutte le card
+            globalFilter();
+        } )
 })
